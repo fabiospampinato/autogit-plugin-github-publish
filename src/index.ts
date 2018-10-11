@@ -18,9 +18,9 @@ const defaultOptions = {
   ssh: true
 };
 
-function factory ( options? ) {
+function factory ( customOptions?: Partial<typeof defaultOptions> ) {
 
-  options = Object.assign ( {}, defaultOptions, options );
+  const options = Object.assign ( {}, defaultOptions, customOptions );
 
   async function githubPublish ( config, repoPath, ctx, task ) {
 
@@ -55,7 +55,7 @@ function factory ( options? ) {
         try {
 
           git.silent ( true );
-          
+
           await git.log ();
 
         } catch ( e ) {
