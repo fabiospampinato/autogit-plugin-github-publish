@@ -115,4 +115,4 @@ function factory ( customOptions?: Partial<typeof defaultOptions> ) {
 
 /* EXPORT */
 
-export = Object.assign ( factory, { default: factory } );
+export default factory;
