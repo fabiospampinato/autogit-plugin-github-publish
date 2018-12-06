@@ -73,7 +73,7 @@ function factory ( customOptions?: Partial<typeof defaultOptions> ) {
 
         task.output = 'Creating repository...';
 
-        const repo = await github.repos.create ({ name, private: options.private });
+        const repo = await github.repos['create']({ name, private: options.private }); //TSC
 
         task.output = `Adding GitHub remote as "${options.remote}"...`;
 
